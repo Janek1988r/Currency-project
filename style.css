@@ -89,3 +89,7 @@ input[type="number"] {
 .table {
   margin-bottom: 20px;
 }
+
+.unvisible {
+  display: none;
+}

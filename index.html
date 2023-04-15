@@ -27,9 +27,10 @@
                 id="input-amount"
                 type="number"
                 step="0.01"
-                placeholder="Podaj kwotę PLN"
+                placeholder="Podaj kwotę"
               />
               <select id="selected-currency" name="currencies">
+                <option value="" selected disabled>Wybierz walutę</option>
                 <option value="EUR">EURO</option>
                 <option value="USD">Dolar Amerykański</option>
                 <option value="CHF">Frank Szwajcarski</option>
@@ -40,6 +41,10 @@
             </form>
             <span id="calculation-result"></span>
           </div>
+        </div>
+        <div class="unvisible" id="result-div">
+          <p id="currency-rate"></p>
+          <p id="result"></p>
         </div>
       </div>
     </section>
