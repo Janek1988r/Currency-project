@@ -10,13 +10,7 @@ let valueOfInputAmount = "";
 let calculationResult = "0";
 
 const chooseLink = (selectionResult) => {
-  if (selectionResult.value === "EUR") {
-    APILink = "https://api.nbp.pl/api/exchangerates/rates/a/eur/";
-  } else if (selectionResult.value === "USD") {
-    APILink = "https://api.nbp.pl/api/exchangerates/rates/a/usd/";
-  } else if (selectionResult.value === "CHF") {
-    APILink = "https://api.nbp.pl/api/exchangerates/rates/a/chf/";
-  }
+  APILink = `https://api.nbp.pl/api/exchangerates/rates/a/${selectionResult.value}/`;
 };
 
 const calculation = () => {
@@ -25,7 +19,7 @@ const calculation = () => {
   calculationResult = parsedInputAmount * parsedCurrencyValue;
 };
 
-async function Data(APILink) {
+async function getData(APILink) {
   try {
     const response = await fetch(APILink);
     const responseJson = await response.json();
@@ -47,7 +41,7 @@ selection.addEventListener("click", function (e) {
   const inputAmount = document.querySelector("#input-amount");
   valueOfInputAmount = inputAmount.value;
   chooseLink(selectionResult);
-  Data(APILink);
+  getData(APILink);
   resultDiv.classList.remove("unvisible");
   console.log(currencyName);
   selectionResult.querySelectorAll("option")[0].selected = "selected";

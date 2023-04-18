@@ -2,11 +2,11 @@
 <html lang="pl-PL">
   <head>
     <meta charset="UTF-8" />
-    <meta name="title" content="Project Budger" />
+    <meta name="title" content="Currency Project" />
     <meta name="author" content="Bartek 'Janek' Janowski" />
     <meta
       name="description"
-      content="Project Budget made to train JS and DOM"
+      content="Currency Project made to train JS and DOM"
     />
     <meta name="keyword" content="HTML, CSS, JS, JavaScript, DOM" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,6 +27,8 @@
                 id="input-amount"
                 type="number"
                 step="0.01"
+                min="0.01"
+                required
                 placeholder="Podaj kwotę"
               />
               <select id="selected-currency" name="currencies">
