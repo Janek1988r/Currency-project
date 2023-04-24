@@ -2,6 +2,7 @@ const selection = document.getElementById("form-in-submit");
 const currencyRate = document.getElementById("currency-rate");
 const taskResult = document.getElementById("result");
 const resultDiv = document.getElementById("result-div");
+const form = document.querySelector("#currency-form");
 
 let APILink = "";
 let currencyValue = "";
@@ -35,7 +36,7 @@ async function getData(APILink) {
   }
 }
 
-selection.addEventListener("click", function (e) {
+form.addEventListener("submit", function (e) {
   e.preventDefault();
   const selectionResult = document.querySelector("#selected-currency");
   const inputAmount = document.querySelector("#input-amount");
@@ -43,7 +44,6 @@ selection.addEventListener("click", function (e) {
   chooseLink(selectionResult);
   getData(APILink);
   resultDiv.classList.remove("unvisible");
-  console.log(currencyName);
   selectionResult.querySelectorAll("option")[0].selected = "selected";
   inputAmount.value = "";
 });
